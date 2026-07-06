@@ -2,7 +2,7 @@
 import Lottie from "lottie-react";
 import dogCute from "../../../public/dogcute.json";
 import heartBeating from "../../../public/Heart Beating.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -10,6 +10,11 @@ export default function LoginPage() {
     const router = useRouter();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -18,7 +23,7 @@ export default function LoginPage() {
     };
 
     return (
-        <main className="flex flex-col min-h-screen bg-white px-8 pt-4 pb-12 font-sans justify-start">
+        <main className={`flex flex-col min-h-screen bg-white px-8 pt-4 pb-12 font-sans justify-start transition-all duration-700 ease-out ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {/* Main Content Block (Grouped to prevent stretching and shifted up) */}
             <div className="flex flex-col items-center w-full -mt-2">
                 {/* Header and Logo Section */}

@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 export default function Page() {
     const [progress, setProgress] = useState(0);
     const router = useRouter();
+    const [isLeaving, setIsLeaving] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -23,14 +24,17 @@ export default function Page() {
     }, []);
 
     useEffect(() => {
-    if (progress >= 100) {
-      router.push("/login");
-    }
-  }, [progress, router]);
+        if (progress >= 100) {
+            setIsLeaving(true);
+            const timeout = setTimeout(() => {
+                router.push("/login");
+            }, 500); // Wait for the 500ms fade-out transition
+            return () => clearTimeout(timeout);
+        }
+    }, [progress, router]);
 
     return (
-        
-        <main className="flex flex-col min-h-screen items-center justify-center bg-white gap-30">
+        <main className={`flex flex-col min-h-screen items-center justify-center bg-white gap-30 transition-opacity duration-500 ease-in-out ${isLeaving ? 'opacity-0' : 'opacity-100'}`}>
            
             <div className="flex flex-col items-center gap-4">
                 <div className="relative">
