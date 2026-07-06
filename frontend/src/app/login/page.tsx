@@ -42,7 +42,7 @@ export default function LoginPage() {
                         />
                     </div>
                     
-                    <h1 className="text-[28px] font-bold text-[#7A4C62] mt-1 tracking-tight">
+                    <h1 className="text-[28px] font-bold text-[#FFB8D9] mt-1 tracking-tight">
                         Welcome to Pokinote
                     </h1>
                     <p className="text-[15px] text-[#998A92] mt-0.5 font-medium">
@@ -99,7 +99,7 @@ export default function LoginPage() {
                     {/* Login Button */}
                     <button
                         type="submit"
-                        className="w-full h-[54px] mt-2 bg-[#FFC0D3] border-[3px] border-[#FFE38E] rounded-full text-[#7A4C62] font-bold text-[18px] hover:bg-[#FFAEC9] hover:border-[#FFDC82] active:scale-[0.98] transition-all cursor-pointer shadow-sm flex items-center justify-center"
+                        className="w-full h-[54px] mt-2 bg-[#FFC0D3] border-[3px] border-[#FF8FA9] rounded-full text-[#7A4C62] font-bold text-[18px] hover:bg-[#FFAEC9] hover:border-[#FF6B8F] active:scale-[0.98] transition-all cursor-pointer shadow-sm flex items-center justify-center"
                     >
                         Login
                     </button>
