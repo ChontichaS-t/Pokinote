@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  
+  font-family: 'Quicksand', 'Nunito', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+}
