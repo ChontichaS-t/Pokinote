@@ -24,7 +24,7 @@ export default function Page() {
 
     useEffect(() => {
     if (progress >= 100) {
-      router.push("/todolist");
+      router.push("/login");
     }
   }, [progress, router]);
 
@@ -50,17 +50,6 @@ export default function Page() {
                 </h1>
             </div>
         
-            <div className="w-full max-w-[280px] flex flex-col items-center">
-                <div className="h-6 w-full rounded-full border-[3px] border-[#FCD34D] bg-white p-[2px] overflow-hidden">
-                    <div
-                        className="h-full rounded-full bg-[#FCA3B7] transition-all duration-100 ease-out"
-                        style={{ width: `${progress}%` }}
-                    />
-                </div>
-                <p className="mt-3 text-lg font-bold tracking-widest text-[#FCD34D]">
-                    loading...
-                </p>
-            </div>
 
         </main>
     );
